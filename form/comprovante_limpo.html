@@ -14,40 +14,52 @@
             border: 2px solid #f59e0b;
             animation: pulse-border 2s infinite;
         }
-        
+
         @keyframes pulse-border {
-            0%, 100% { border-color: #f59e0b; }
-            50% { border-color: #d97706; }
+
+            0%,
+            100% {
+                border-color: #f59e0b;
+            }
+
+            50% {
+                border-color: #d97706;
+            }
         }
-        
+
         .payment-cta {
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .payment-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
         }
-        
+
         .urgency-badge {
             background: linear-gradient(45deg, #dc2626, #ef4444);
             animation: glow 2s ease-in-out infinite alternate;
         }
-        
+
         @keyframes glow {
-            from { box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
-            to { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
+            from {
+                box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.8);
+            }
         }
-        
+
         .status-pending {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border: 2px dashed #f59e0b;
             position: relative;
             overflow: hidden;
         }
-        
+
         .status-pending::before {
             content: '';
             position: absolute;
@@ -55,15 +67,20 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             animation: shimmer 2s infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
-        
+
         .countdown-timer {
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
             color: white;
@@ -73,11 +90,11 @@
             display: inline-block;
             margin: 0.5rem 0;
         }
-        
+
         .benefit-item {
             transition: transform 0.2s ease;
         }
-        
+
         .benefit-item:hover {
             transform: translateX(5px);
         }
@@ -144,17 +161,23 @@
                     <!-- Desktop Progress -->
                     <div class="hidden md:flex items-center justify-between">
                         <div class="flex items-center">
-                            <div class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">✓</div>
+                            <div
+                                class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">
+                                ✓</div>
                             <span class="ml-2 text-sm font-medium text-green-600">Dados Pessoais</span>
                         </div>
                         <div class="flex-1 mx-3 h-1 bg-green-600 rounded"></div>
                         <div class="flex items-center">
-                            <div class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">✓</div>
+                            <div
+                                class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">
+                                ✓</div>
                             <span class="ml-2 text-sm font-medium text-green-600">Documentação</span>
                         </div>
                         <div class="flex-1 mx-3 h-1 bg-yellow-400 rounded"></div>
                         <div class="flex items-center">
-                            <div class="w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center text-xs font-medium">!</div>
+                            <div
+                                class="w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center text-xs font-medium">
+                                !</div>
                             <span class="ml-2 text-sm font-medium text-yellow-600">Pagamento</span>
                         </div>
                     </div>
@@ -225,15 +248,15 @@
                             <div class="space-y-3">
                                 <div>
                                     <span class="text-sm font-medium text-gray-600">Nome Completo:</span>
-                                    <p class="font-medium">-</p>
+                                    <p class="font-medium" id="nome-completo">-</p>
                                 </div>
                                 <div>
-                                    <span class="text-sm font-medium text-gray-600">CPF:</span>
-                                    <p class="font-medium font-mono">-</p>
+                                    <span class="text-sm font-medium text-gray-600">Telefone:</span>
+                                    <p class="font-medium font-mono" id="telefone">-</p>
                                 </div>
                                 <div>
-                                    <span class="text-sm font-medium text-gray-600">Data de Nascimento:</span>
-                                    <p class="font-medium">-</p>
+                                    <span class="text-sm font-medium text-gray-600">Email:</span>
+                                    <p class="font-medium" id="email">-</p>
                                 </div>
                                 <div>
                                     <span class="text-sm font-medium text-gray-600">Nome da Mãe:</span>
@@ -251,7 +274,7 @@
                             <div class="space-y-3">
                                 <div>
                                     <span class="text-sm font-medium text-gray-600">Cargo Pretendido:</span>
-                                    <p class="font-medium">-</p>
+                                    <p class="font-medium" id="cargo-nome">-</p>
                                 </div>
                                 <div>
                                     <span class="text-sm font-medium text-gray-600">Unidade Escolar:</span>
@@ -261,13 +284,13 @@
                                 </div>
                                 <div>
                                     <span class="text-sm font-medium text-gray-600">Remuneração:</span>
-                                    <p class="font-medium text-green-600">-</p>
+                                    <p class="font-medium text-green-600" id="remuneracao">-</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- QR Code e Validação -->
+                    <!-- QR Code e Validação 
                     <div class="mt-6 pt-6 border-t border-gray-200 text-center">
                         <div class="flex items-center justify-center mb-4">
                             <div class="bg-gray-100 w-24 h-24 rounded-lg flex items-center justify-center mr-4">
@@ -281,7 +304,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
                 <!-- Seção Persuasiva de Pagamento -->
@@ -292,7 +315,8 @@
                             ATENÇÃO: Sua Vaga Está Reservada!
                         </h2>
                         <p class="text-lg text-gray-700">
-                            Complete o pagamento da taxa de inscrição para <strong>garantir definitivamente</strong> sua participação no concurso
+                            Complete o pagamento da taxa de inscrição para <strong>garantir definitivamente</strong> sua
+                            participação no concurso
                         </p>
                     </div>
 
@@ -303,10 +327,12 @@
                                 Tempo Limitado
                             </h3>
                             <p class="text-sm text-gray-700 mb-3">
-                                Você tem apenas <strong>30 minutos</strong> para completar o pagamento. Após esse prazo, sua vaga será liberada para outros candidatos.
+                                Você tem apenas <strong>30 minutos</strong> para completar o pagamento. Após esse prazo,
+                                sua vaga será liberada para outros candidatos.
                             </p>
                             <div class="bg-red-100 p-2 rounded text-center">
-                                <span class="text-red-700 font-bold">Restam: <span id="countdown-main">29:59</span></span>
+                                <span class="text-red-700 font-bold">Restam: <span
+                                        id="countdown-main">29:59</span></span>
                             </div>
                         </div>
 
@@ -316,7 +342,8 @@
                                 Vaga Garantida
                             </h3>
                             <p class="text-sm text-gray-700 mb-3">
-                                Ao completar o pagamento, sua inscrição será <strong>confirmada definitivamente</strong> e você receberá:
+                                Ao completar o pagamento, sua inscrição será <strong>confirmada definitivamente</strong>
+                                e você receberá:
                             </p>
                             <ul class="text-sm text-gray-700 space-y-1">
                                 <li class="benefit-item flex items-center">
@@ -348,7 +375,8 @@
                     </div>
 
                     <div class="text-center">
-                        <button class="payment-cta text-white px-8 py-4 rounded-lg text-xl font-bold inline-flex items-center">
+                        <button
+                            class="payment-cta text-white px-8 py-4 rounded-lg text-xl font-bold inline-flex items-center">
                             <i class="fas fa-credit-card mr-3"></i>
                             PAGAR TAXA DE INSCRIÇÃO AGORA
                         </button>
@@ -368,15 +396,18 @@
                     <div class="text-blue-700 text-sm space-y-2">
                         <p class="flex items-start">
                             <i class="fas fa-shield-alt mr-2 mt-1 text-green-600"></i>
-                            <strong>Segurança Garantida:</strong> Todos os pagamentos são processados com criptografia SSL e certificação PCI DSS
+                            <strong>Segurança Garantida:</strong> Todos os pagamentos são processados com criptografia
+                            SSL e certificação PCI DSS
                         </p>
                         <p class="flex items-start">
                             <i class="fas fa-clock mr-2 mt-1 text-yellow-600"></i>
-                            <strong>Prazo Limite:</strong> O pagamento deve ser realizado em até 30 minutos após a inscrição
+                            <strong>Prazo Limite:</strong> O pagamento deve ser realizado em até 30 minutos após a
+                            inscrição
                         </p>
                         <p class="flex items-start">
                             <i class="fas fa-file-invoice mr-2 mt-1 text-blue-600"></i>
-                            <strong>Comprovante:</strong> Após o pagamento, você receberá o comprovante oficial por email
+                            <strong>Comprovante:</strong> Após o pagamento, você receberá o comprovante oficial por
+                            email
                         </p>
                         <p class="flex items-start">
                             <i class="fas fa-headset mr-2 mt-1 text-purple-600"></i>
@@ -389,36 +420,55 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dados = JSON.parse(localStorage.getItem('dadosInscricao'));
+
+            if (!dados) return;
+
+            // Dados pessoais
+            document.getElementById('nome-completo').textContent = dados.nome || '-';
+            document.getElementById('telefone').textContent = dados.telefone || '-';
+
+            // Cargo
+            if (dados.cargo) {
+                document.getElementById('cargo-nome').textContent = dados.cargo.nome || '-';
+                document.getElementById('remuneracao').textContent =
+                    `R$ ${dados.cargo.remuneracao.min.toLocaleString('pt-BR')} - R$ ${dados.cargo.remuneracao.max.toLocaleString('pt-BR')}`;
+            }
+        });
+    </script>
+
+    <script>
         // Countdown timer
         function updateCountdown() {
             const now = new Date().getTime();
             const deadline = now + (30 * 60 * 1000); // 30 minutos a partir de agora
-            
-            setInterval(function() {
+
+            setInterval(function () {
                 const now = new Date().getTime();
                 const distance = deadline - now;
-                
+
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                const timeString = minutes.toString().padStart(2, '0') + ":" + 
-                                 seconds.toString().padStart(2, '0');
-                
+
+                const timeString = minutes.toString().padStart(2, '0') + ":" +
+                    seconds.toString().padStart(2, '0');
+
                 document.getElementById('countdown').innerHTML = timeString;
                 document.getElementById('countdown-main').innerHTML = timeString;
-                
+
                 if (distance < 0) {
                     document.getElementById('countdown').innerHTML = "EXPIRADO";
                     document.getElementById('countdown-main').innerHTML = "EXPIRADO";
                 }
             }, 1000);
         }
-        
+
         // Inicializar countdown quando a página carregar
         document.addEventListener('DOMContentLoaded', updateCountdown);
-        
+
         // Adicionar evento de clique no botão de pagamento
-        document.querySelector('.payment-cta').addEventListener('click', function() {
+        document.querySelector('.payment-cta').addEventListener('click', function () {
             window.location.href = 'https://go.perfectpay.com.br/PPU38CPST4O';
         });
     </script>
@@ -426,4 +476,3 @@
 </body>
 
 </html>
-
