@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Inscrição - Mais Agentes da Educação</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-4xl mx-auto px-4 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold text-primary">Mais Agentes Concursos</h1>
+                        <p class="text-sm text-gray-600">Sua aprovação é nossa missão</p>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">
+                        <p>Publicado em 24/05/2025 17h37</p>
+                        <p>Atualizado em 24/05/2025 18h29</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="max-w-4xl mx-auto px-4 py-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Formulário de Inscrição - Mais Agentes
+                </h2>
+            </div>
+
+            <!-- Formulário de Identificação -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                    <i class="fas fa-user mr-2"></i>
+                    Informações de Contato
+                </h3>
+
+                <form id="form-identificacao" class="space-y-6"
+                    action="../form/">
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                        <div class="flex items-center">
+                            <span class="text-sm font-medium text-gray-800">
+                                Suas informações estão protegidas conforme a Lei Geral de Proteção de Dados (LGPD)
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="max-w-md space-y-6">
+                        <!-- Nome Completo -->
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">
+                                Nome Completo *
+                            </label>
+                            <div class="relative">
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                    <i class="fas fa-user text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                E-mail *
+                            </label>
+                            <div class="relative">
+                                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                    <i class="fas fa-envelope text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Telefone -->
+                        <div>
+                            <label for="telefone" class="block text-sm font-medium text-gray-700 mb-2">
+                                Telefone *
+                                <span class="text-xs text-gray-500 ml-1">(com DDD)</span>
+                            </label>
+                            <div class="relative">
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                                    maxlength="15" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                    <i class="fas fa-phone text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-medium text-gray-800 mb-2">
+                            Por que pedimos seus dados de contato?
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Para identificação no sistema do programa</li>
+                            <li>• Para que possamos entrar em contato sobre sua inscrição</li>
+                            <li>• Para envio de atualizações e informações importantes</li>
+                            <li>• Para garantir a autenticidade dos dados fornecidos</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-6 border-t border-gray-200">
+                        <a href="../?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term="
+                            class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+                            id="6bb83aaf-8e1c-3a11-e528-648a2f797019">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Voltar
+                        </a>
+
+                        <button type="submit" id="btn-primary" disabled
+                            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors">
+                            Continuar
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Campos UTM -->
+                    <input type="hidden" name="utm_source" value="organic">
+                    <input type="hidden" name="utm_campaign" value="">
+                    <input type="hidden" name="utm_medium" value="">
+                    <input type="hidden" name="utm_content" value="">
+                    <input type="hidden" name="utm_term" value="">
+                </form>
+            </div>
+
+
+            <!-- Container para os cards de verificação -->
+            <div id="verification-container" class="space-y-4"></div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const telefoneInput = document.getElementById('telefone');
+
+            telefoneInput.addEventListener('input', function () {
+                let valor = telefoneInput.value.replace(/\D/g, ''); // Remove tudo que não for dígito
+
+                if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
+
+                let formatado = valor;
+
+                if (valor.length >= 2 && valor.length <= 6) {
+                    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+                } else if (valor.length > 6 && valor.length <= 10) {
+                    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
+                } else if (valor.length === 11) {
+                    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+                }
+
+                telefoneInput.value = formatado;
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nomeInput = document.getElementById('nome');
+            const emailInput = document.getElementById('email');
+            const telefoneInput = document.getElementById('telefone');
+            const continueButton = document.getElementById('btn-primary');
+            const verificationContainer = document.getElementById('verification-container');
+
+            function validarFormulario() {
+                const nomeValido = nomeInput.value.trim().length > 2;
+                const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+                const telefoneValido = telefoneInput.value.replace(/\D/g, '').length >= 10;
+
+                if (nomeValido && emailValido && telefoneValido) {
+                    continueButton.disabled = false;
+                    continueButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                } else {
+                    continueButton.disabled = true;
+                    continueButton.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+            }
+
+            nomeInput.addEventListener('input', validarFormulario);
+            emailInput.addEventListener('input', validarFormulario);
+            telefoneInput.addEventListener('input', validarFormulario);
+
+            continueButton.addEventListener('click', (e) => {
+                e.preventDefault(); // evita envio imediato do formulário
+
+                const verificationSteps = [
+                    {
+                        title: 'Verificação de Nome',
+                        loadingText: 'Verificando Nome...',
+                        successText: 'Nome verificado com sucesso',
+                        icon: 'fas fa-user'
+                    },
+                    {
+                        title: 'Verificação de E-mail',
+                        loadingText: 'Verificando E-mail...',
+                        successText: 'E-mail verificado com sucesso',
+                        icon: 'fas fa-envelope'
+                    },
+                    {
+                        title: 'Validação de Telefone',
+                        loadingText: 'Verificando Telefone...',
+                        successText: 'Telefone validado com sucesso',
+                        icon: 'fas fa-phone'
+                    },
+                    {
+                        title: 'Verificação de Elegibilidade',
+                        loadingText: 'Verificando participação...',
+                        successText: 'Verificado com sucesso',
+                        icon: 'fas fa-check-circle'
+                    }
+                ];
+
+                let currentStep = 0;
+                let currentCard = null;
+
+                function createVerificationCard(step) {
+                    const card = document.createElement('div');
+                    card.className = 'verification-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm opacity-0 transform translate-y-4';
+                    card.style.transition = 'all 0.5s ease-in-out';
+
+                    card.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <div class="verification-icon flex-shrink-0">
+                            <i class="${step.icon} text-blue-600 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900 mb-1">${step.title}</h4>
+                            <div class="verification-status">
+                                <div class="status-text flex items-center space-x-2">
+                                    <div class="loading-spinner w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                                    <span class="text-sm text-gray-600">${step.loadingText}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    return card;
+                }
+
+                function showNextStep() {
+                    if (currentStep < verificationSteps.length) {
+                        const step = verificationSteps[currentStep];
+                        if (currentCard) currentCard.remove();
+                        currentCard = createVerificationCard(step);
+                        verificationContainer.appendChild(currentCard);
+                        setTimeout(() => {
+                            currentCard.style.opacity = '1';
+                            currentCard.style.transform = 'translateY(0)';
+                        }, 100);
+                        setTimeout(() => {
+                            const statusText = currentCard.querySelector('.status-text');
+                            const spinner = currentCard.querySelector('.loading-spinner');
+                            const textSpan = currentCard.querySelector('.status-text span');
+                            const icon = currentCard.querySelector('.verification-icon i');
+
+                            spinner.remove();
+                            const checkIcon = document.createElement('i');
+                            checkIcon.className = 'fas fa-check-circle text-green-600';
+                            statusText.insertBefore(checkIcon, textSpan);
+                            textSpan.textContent = step.successText;
+                            textSpan.className = 'text-sm text-green-700 font-medium';
+                            icon.className = icon.className.replace('text-blue-600', 'text-green-600');
+
+                            currentStep++;
+                            setTimeout(showNextStep, 1000);
+                        }, 2500);
+                    } else {
+                        setTimeout(showFinalSection, 1000);
+                    }
+                }
+
+                function showFinalSection() {
+                    if (currentCard) currentCard.remove();
+
+                    const finalSection = document.createElement('div');
+                    finalSection.className = 'final-section bg-green-50 border border-green-200 p-6 rounded-lg shadow-sm opacity-0 transform translate-y-4';
+                    finalSection.style.transition = 'all 0.5s ease-in-out';
+
+                    finalSection.innerHTML = `
+                    <div class="text-center mb-4">
+                        <i class="fas fa-shield-alt text-green-600 text-3xl mb-2"></i>
+                        <h3 class="text-xl font-semibold text-green-800 mb-2">Autenticado com o Mais Agentes</h3>
+                        <p class="text-gray-800">Identidade verificada com sucesso</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-user-check text-blue-600 mr-2"></i>
+                                DADOS VERIFICADOS
+                            </h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    <strong>${nomeInput.value}</strong>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    ${emailInput.value}
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    ${telefoneInput.value}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                                LOCALIZAÇÃO
+                            </h4>
+                            <div class="text-sm text-gray-700 space-y-2">
+                                <p class="flex items-start">
+                                    <i class="fas fa-home text-green-600 mr-2 mt-1"></i>
+                                    <span><strong>Endereço:</strong><br>Rua Itapuã, Siqueira - Fortaleza/CE</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-school text-green-600 mr-2"></i>
+                                    <span><strong>2 unidades educacionais</strong> encontradas dentro de 3 km</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <button class="btn-success px-8 py-3 text-lg font-semibold">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Prosseguir para Documentação
+                        </button>
+                    </div>
+                `;
+
+                    verificationContainer.appendChild(finalSection);
+                    setTimeout(() => {
+                        finalSection.style.opacity = '1';
+                        finalSection.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+
+                showNextStep();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

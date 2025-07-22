@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G1 - Concurso Mais Agentes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #c4170c;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Header */
+        .mobile-header {
+            display: none;
+            background-color: #c4170c;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .author-info {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .author-info strong {
+            color: #c4170c;
+        }
+
+        .g1-logo {
+            height: 40px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .section-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight-quote {
+            background-color: #f8f9fa;
+            border-left: 4px solid #c4170c;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .highlight-quote strong {
+            color: #c4170c;
+        }
+
+        /* Program Logo */
+        .program-logo {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .program-logo img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        /* Statistics Box */
+        .stats-box {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .stats-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .stats-box p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .stats-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* Divider */
+        .divider {
+            text-align: center;
+            margin: 40px 0;
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .testimonial {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #c4170c;
+        }
+
+        /* Discount Banner */
+        .discount-banner {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discount-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .discount-banner h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .discount-banner p {
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .price-new {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* News Images Section */
+        .news-images {
+            margin: 50px 0;
+        }
+
+        .news-images h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .news-image {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .news-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .news-image p {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                display: none;
+            }
+
+            .mobile-header {
+                display: block;
+            }
+
+            .article-title {
+                font-size: 24px;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stats-box {
+                padding: 20px;
+            }
+
+            .stats-number {
+                font-size: 28px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+
+            .images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Urgency Elements */
+        .urgency-badge {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .limited-time {
+            background-color: #ffc107;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .requirements-box {
+            background-color: #e8f5e8;
+            border: 2px solid #28a745;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .requirements-box h4 {
+            color: #28a745;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            padding: 8px 0;
+            font-size: 16px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .requirements-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">g1</div>
+                <nav class="nav-menu">
+                    <a href="#">MENU</a>
+                    <a href="#">CONCURSOS</a>
+                    <a href="#">BUSCAR</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="container">
+            <div class="logo">CONCURSOS</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <article>
+                <div class="article-header">
+                    <div class="urgency-badge">INSCRIÇÕES ABERTAS</div>
+                    <h1 class="article-title">
+                        Governo Federal abre inscrições para o maior concurso público da história: "Mais Agentes Concursos" oferece 85.000 vagas com salários de até R$ 12.500 para todos os níveis de escolaridade
+                    </h1>
+                    <p class="article-subtitle">
+                        O concurso "Mais Agentes Concursos" é uma iniciativa inédita que visa preencher vagas em órgãos federais, estaduais e municipais em todo o Brasil. Como parte do programa de inclusão social, o governo criou uma taxa promocional de R$ 70 durante o período de lançamento, representando 85% de desconto sobre o valor normal de R$ 450.
+                    </p>
+                </div>
+
+                <div class="article-meta">
+                    <div class="author-info">
+                        <strong>Por Carla Mendonça, g1</strong> – Brasília, Brasil<br>
+                        21/01/2025 08h15 • Atualizado há 2 horas
+                    </div>
+                    <div>
+                        <svg width="100" height="20" viewBox="0 0 100 20" fill="none">
+                            <rect width="100" height="20" fill="#c4170c"/>
+                            <text x="50" y="14" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">g1</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Sobre o Concurso "Mais Agentes Concursos"</h2>
+                    <p class="section-text">
+                        O <strong>"Mais Agentes Concursos"</strong> é o maior processo seletivo já realizado no Brasil, fruto de uma parceria entre o Governo Federal e os principais órgãos públicos do país. O objetivo é preencher rapidamente as 85.000 vagas em aberto em diversos setores da administração pública.
+                    </p>
+                    <p class="section-text">
+                        O grande diferencial deste concurso é a inclusão: foram criadas vagas para todos os níveis de escolaridade, desde ensino fundamental incompleto até ensino superior, garantindo que qualquer brasileiro possa participar e conquistar a tão sonhada estabilidade do serviço público.
+                    </p>
+                </div>
+
+                <div class="requirements-box">
+                    <h4>📋 Quem Pode Participar?</h4>
+                    <ul class="requirements-list">
+                        <li><strong>Ensino Fundamental Incompleto:</strong> Auxiliar Administrativo, Agente de Portaria, Motorista (salários R$ 2.200 a R$ 4.500)</li>
+                        <li><strong>Ensino Fundamental Completo:</strong> Agente de Segurança, Técnico em Manutenção (salários R$ 3.200 a R$ 6.800)</li>
+                        <li><strong>Ensino Médio Completo:</strong> Técnico Administrativo, Agente Fiscal (salários R$ 4.500 a R$ 9.200)</li>
+                        <li><strong>Ensino Superior:</strong> Analista, Auditor, Procurador (salários R$ 8.500 a R$ 12.500)</li>
+                        <li><strong>Idade:</strong> Entre 18 e 65 anos</li>
+                        <li><strong>Nacionalidade:</strong> Brasileira nata ou naturalizada</li>
+                    </ul>
+                </div>
+
+                <div class="stats-box">
+                    <h3>Números Impressionantes</h3>
+                    <p>Total de vagas disponíveis:</p>
+                    <div class="stats-number">85.000</div>
+                    <p>Salários de <strong>R$ 2.200 a R$ 12.500</strong></p>
+                    <p>Vagas em <strong>todos os 26 estados + DF</strong></p>
+                    <p>Mais de <strong>150 cargos diferentes</strong></p>
+                </div>
+
+                <div class="content-section">
+                    <div class="highlight-quote">
+                        "Este é o maior concurso da história do Brasil. Queremos dar oportunidade para todos os brasileiros, independente do nível de escolaridade. Temos vagas desde auxiliar administrativo até procurador federal." <strong>afirma Dr. Roberto Silva, coordenador-geral do concurso.</strong>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <p class="section-text">
+                        Segundo dados do IBGE, apenas 8% dos brasileiros conseguem ser aprovados em concursos públicos tradicionais, principalmente devido às altas taxas de inscrição e à complexidade dos processos. O "Mais Agentes Concursos" foi criado justamente para quebrar essas barreiras.
+                    </p>
+                    <p class="section-text">
+                        As taxas de inscrição em concursos no Brasil variam entre R$ 80 e R$ 450, valores que muitas vezes impedem que pessoas de baixa renda participem. Por isso, foi criado um programa especial de inclusão social com taxa promocional durante o período de lançamento.
+                    </p>
+                </div>
+
+                <div class="highlight-quote">
+                    "Nosso objetivo é que qualquer brasileiro, independente de sua condição financeira ou nível de escolaridade, possa se inscrever e ter uma chance real de conquistar um cargo público. Por isso criamos esta taxa promocional de lançamento." <strong>declara Dra. Ana Paula Rodrigues, diretora de Inclusão Social do programa.</strong>
+                </div>
+
+                <div class="divider">CONTINUA DEPOIS DA PUBLICIDADE</div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Programa de Inclusão Social e Taxa Promocional</h2>
+                    <p class="section-text">
+                        As inscrições para o <strong>"Mais Agentes Concursos"</strong> começaram na última segunda-feira e já causaram grande movimentação em todo o país. Filas virtuais se formaram nos primeiros minutos após a abertura.
+                    </p>
+                    <p class="section-text">
+                        Como parte do programa de inclusão social do governo federal, foi estabelecida uma taxa promocional de lançamento de R$ 70,00 durante as primeiras semanas de inscrição. Esta medida visa garantir que pessoas de todas as classes sociais tenham acesso ao concurso.
+                    </p>
+                    <p class="section-text">
+                        Após o período promocional, a taxa retornará ao valor normal de R$ 450,00. A medida faz parte da política nacional de democratização do acesso ao serviço público, seguindo diretrizes estabelecidas pelo Ministério da Gestão e da Inovação.
+                    </p>
+                </div>
+
+                <div class="discount-banner">
+                    <h3>🎯 OFERTA ESPECIAL PARA LEITORES DO BLOG</h3>
+                    <p>Taxa normal: <span class="price-old">R$ 450,00</span></p>
+                    <p>Taxa promocional de lançamento:</p>
+                    <p class="price-new">R$ 70,00</p>
+                    <p>Desconto de 85% • Inscrição Completa • Todas as Vagas</p>
+                </div>
+
+                <div class="limited-time">
+                    ⏰ ATENÇÃO: A taxa promocional é válida apenas durante o período de lançamento ou até atingir 5.000 inscrições, o que ocorrer primeiro.
+                </div>
+
+                <div class="testimonials">
+                    <h3 style="text-align: center; margin-bottom: 30px; color: #333;">Depoimentos de Aprovados em Concursos Anteriores</h3>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Eu só tinha o ensino fundamental e consegui passar para auxiliar administrativo. Hoje ganho R$ 3.200 e tenho estabilidade que nunca tive na vida!"</p>
+                        <p class="testimonial-author">- Maria Santos, 34 anos, Aprovada na Prefeitura de São Paulo</p>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Sempre pensei que concurso era só para quem tinha faculdade. Me inscrevi com ensino médio e passei em 5º lugar para técnico administrativo. Salário de R$ 5.800!"</p>
+                        <p class="testimonial-author">- João Silva, 29 anos, Aprovado no TRT-SP</p>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Estava desempregada há 2 anos. Vi a oportunidade, paguei a taxa promocional de R$ 70 e hoje sou servidora federal com salário de R$ 7.200. Mudou minha vida!"</p>
+                        <p class="testimonial-author">- Ana Costa, 31 anos, Aprovada na Receita Federal</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Estratégia de Inclusão Social</h2>
+                    <p class="section-text">
+                        É fundamental para um programa governamental "chegar chegando" quando se trata de transformar a realidade social brasileira. Caso os beneficiários não vejam que realmente têm chances de aprovação, é provável que a iniciativa não alcance seus objetivos de inclusão.
+                    </p>
+                    <p class="section-text">
+                        Por isso, o governo criou um sistema diferenciado: além da taxa promocional de lançamento, o concurso terá etapas adaptadas para cada nível de escolaridade, garantindo que todos tenham chances reais de aprovação.
+                    </p>
+                </div>
+
+                <div class="highlight-quote">
+                    "A taxa promocional de R$ 70 faz parte de uma política pública de inclusão. Queremos que todos tenham acesso, independente de sua condição financeira. É um investimento do governo na democratização do serviço público." <strong>garante Marcos Oliveira, diretor de Inclusão Social do programa.</strong>
+                </div>
+
+                <div class="content-section">
+                    <p class="section-text">
+                        Essa estratégia de democratização já foi utilizada com sucesso em outros países. Na França, por exemplo, concursos públicos com taxas reduzidas aumentaram em 340% a participação de pessoas de baixa renda, resultando em um serviço público mais diverso e representativo.
+                    </p>
+                </div>
+
+                <div class="divider">CONTINUA DEPOIS DA PUBLICIDADE</div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Como se Inscrever no "Mais Agentes Concursos"</h2>
+                    <p class="section-text">
+                        O processo de inscrição é simples e pode ser feito 100% online. O candidato escolhe o nível de escolaridade correspondente ao seu perfil e automaticamente fica habilitado a concorrer a todas as vagas daquele nível em todo o Brasil.
+                    </p>
+                    <p class="section-text">
+                        A taxa promocional de R$ 70,00 dá direito a participar de todas as etapas: prova objetiva, prova prática (quando aplicável), avaliação de títulos e exame médico. Não há custos adicionais durante todo o processo.
+                    </p>
+                    <p class="section-text">
+                        <strong>Importante:</strong> Cada CPF pode fazer apenas uma inscrição, mas o candidato concorre automaticamente a todas as vagas compatíveis com seu nível de escolaridade em sua região de preferência.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">O que está incluso na inscrição?</h2>
+                    <p class="section-text">
+                        • <strong>Participação em todas as etapas</strong> do concurso<br>
+                        • <strong>Concorrência a todas as vagas</strong> do seu nível de escolaridade<br>
+                        • <strong>Material de estudo básico</strong> enviado por e-mail<br>
+                        • <strong>Simulados online gratuitos</strong> durante 6 meses<br>
+                        • <strong>Atualizações</strong> sobre cronograma e resultados<br>
+                        • <strong>Certificado de participação</strong> reconhecido pelo MEC<br>
+                        • <strong>Suporte técnico</strong> durante todo o processo
+                    </p>
+                </div>
+
+                <div class="cta-section">
+                    <a href="#" class="cta-button" onclick="window.location.href='../';">
+                        🎯 FAZER MINHA INSCRIÇÃO COM TAXA PROMOCIONAL
+                    </a>
+                    <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                        ✅ Inscrição imediata • ✅ Pagamento seguro • ✅ Todas as vagas disponíveis
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <p class="section-text" style="text-align: center; font-style: italic; color: #666;">
+                        <strong>Nota da redação:</strong> Esta é uma oportunidade histórica para brasileiros que sonham com a estabilidade do serviço público. Recomendamos que os interessados não percam tempo, pois a taxa promocional é limitada e a procura está muito alta. As inscrições podem retornar ao valor normal a qualquer momento.
+                    </p>
+                </div>
+
+                <div class="news-images">
+                    <h3>📰 Repercussão na Mídia</h3>
+                    <div class="images-grid">
+                        <div class="news-image">
+                            <img src="./assets/captura-1.png" alt="Notícia sobre o concurso Mais Agentes" />
+                            <p>Reportagem sobre a abertura das inscrições</p>
+                        </div>
+                        <div class="news-image">
+                            <img src="./assets/captura-2.png" alt="Matéria sobre as vagas disponíveis" />
+                            <p>Detalhes sobre as 85.000 vagas oferecidas</p>
+                        </div>
+                        <div class="news-image">
+                            <img src="./assets/captura-3.png" alt="Entrevista com coordenador do concurso" />
+                            <p>Entrevista exclusiva com o coordenador-geral</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>CNPJ:</strong> 12.345.678/0001-90 | <strong>E-mail:</strong> inscricoes@maisagentesconcursos.gov.br</p>
+            <p><strong>Endereço:</strong> SCS Quadra 09, Lote C, Ed. Parque Cidade Corporate - Brasília/DF</p>
+            <p><strong>Telefone:</strong> 0800-123-4567 (Gratuito)</p>
+            <br>
+            <p>Política de Privacidade | Termos e Condições | Edital Completo</p>
+        </div>
+    </footer>
+
+    <script>
+        // Adiciona efeito de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adiciona contador regressivo simples
+        function updateCounter() {
+            const now = new Date().getTime();
+            const deadline = now + (5 * 24 * 60 * 60 * 1000); // 5 dias
+            
+            setInterval(function() {
+                const now = new Date().getTime();
+                const distance = deadline - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                
+                const counterElements = document.querySelectorAll('.counter');
+                counterElements.forEach(el => {
+                    el.innerHTML = `${days}d ${hours}h ${minutes}m`;
+                });
+                
+                if (distance < 0) {
+                    counterElements.forEach(el => {
+                        el.innerHTML = "INSCRIÇÕES ENCERRADAS";
+                    });
+                }
+            }, 1000);
+        }
+
+        // Inicializa o contador quando a página carrega
+        document.addEventListener('DOMContentLoaded', updateCounter);
+
+        // Adiciona efeito de destaque ao botão CTA
+        const ctaButton = document.querySelector('.cta-button');
+        if (ctaButton) {
+            setInterval(() => {
+                ctaButton.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    ctaButton.style.transform = 'scale(1)';
+                }, 200);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+

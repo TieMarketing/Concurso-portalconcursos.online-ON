@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Inscrição - Mais Agentes da Educação</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-4xl mx-auto px-4 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold text-primary">Mais Agentes Concursos</h1>
+                        <p class="text-sm text-gray-600">Sua aprovação é nossa missão</p>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">
+                        <p>Publicado em 24/05/2025 17h37</p>
+                        <p>Atualizado em 24/05/2025 18h29</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="max-w-4xl mx-auto px-4 py-8">
+            <div class="px-4 py-4">
+                <h1 class="text-3xl font-semibold mb-4" style="color: #1351b4">
+                    Comprovante de Inscrição
+                </h1>
+
+                <div class="border-t border-b border-gray-300 py-3 mb-6">
+                    <div class="text-gray-700 text-sm">
+                        <p>Gerado em <span id="data-geracao">10/07/2025, 16:17:54</span></p>
+                    </div>
+                </div>
+
+                <!-- Progress Bar Final -->
+                <div class="bg-white border border-gray-200 rounded-lg p-4 md:p-6 mb-6 md:mb-8">
+                    <h2 class="text-base md:text-lg font-semibold text-gray-800 mb-3 md:mb-4">
+                        Progresso da Inscrição
+                    </h2>
+
+                    <!-- Desktop Progress -->
+                    <div class="hidden md:flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div
+                                class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">
+                                ✓
+                            </div>
+                            <span class="ml-2 text-sm font-medium text-green-600">Dados Pessoais</span>
+                        </div>
+                        <div class="flex-1 mx-3 h-1 bg-green-600 rounded"></div>
+                        <div class="flex items-center">
+                            <div
+                                class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">
+                                ✓
+                            </div>
+                            <span class="ml-2 text-sm font-medium text-green-600">Documentação</span>
+                        </div>
+                        <div class="flex-1 mx-3 h-1 bg-green-600 rounded"></div>
+                        <div class="flex items-center">
+                            <div
+                                class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-medium">
+                                ✓
+                            </div>
+                            <span class="ml-2 text-sm font-medium text-green-600">Finalização</span>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Progress -->
+                    <div class="md:hidden">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs text-gray-600">Etapa 3 de 3</span>
+                            <span class="text-xs font-medium text-green-600">80% concluído</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                            <div class="bg-green-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="font-medium text-green-600">• Dados Pessoais</span>
+                            <span class="font-medium text-green-600">• Documentação</span>
+                            <span class="font-medium text-green-600">• Finalização</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comprovante -->
+                <div class="bg-white border-2 border-green-500 rounded-lg p-6 mb-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="flex items-center justify-center mb-4">
+                            <img src="./comprovante-inscricao_files/gov-logo.svg" alt="Gov.br" class="h-12 mr-4"
+                                onerror="this.style.display=&#39;none&#39;" style="display: none;">
+                            <div>
+                                <h2 class="text-xl font-bold text-gray-800">GOVERNO FEDERAL</h2>
+                                <p class="text-sm text-gray-600">Ministério da Educação</p>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-green-700 mb-2">
+                            COMPROVANTE DE INSCRIÇÃO
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Programa Nacional de Agentes da Educação - PNAE
+                        </p>
+                    </div>
+
+                    <div class="border-t border-b border-gray-200 py-4 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-sm font-medium text-gray-600">Protocolo:</span>
+                                <p class="font-mono text-lg font-bold text-blue-600" id="protocolo-inscricao">
+                                    -
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-gray-600">Status:</span>
+                                <p class="font-medium text-green-600">INSCRIÇÃO REALIZADA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Dados Pessoais -->
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user mr-2 text-blue-600"></i>
+                                Dados Pessoais
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">Nome Completo:</span>
+                                    <p class="font-medium" id="nome-completo">-</p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">CPF:</span>
+                                    <p class="font-medium font-mono" id="cpf-usuario">-</p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">Data de Nascimento:</span>
+                                    <p class="font-medium" id="data-nascimento">-</p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">Nome da Mãe:</span>
+                                    <p class="font-medium" id="nome-mae">-</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dados da Vaga -->
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-briefcase mr-2 text-blue-600"></i>
+                                Dados da Vaga
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">Cargo Pretendido:</span>
+                                    <p class="font-medium" id="cargo-pretendido">-</p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">Unidade Escolar:</span>
+                                    <p class="font-medium text-gray-500" id="unidade-escolar">
+                                        Será selecionada após a seleção de aptidão
+                                    </p>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-gray-600">Remuneração:</span>
+                                    <p class="font-medium text-green-600" id="remuneracao">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QR Code e Validação -->
+                    <div class="mt-6 pt-6 border-t border-gray-200 text-center">
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="bg-gray-100 w-24 h-24 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-qrcode text-4xl text-gray-400"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-sm font-medium text-gray-700">
+                                    Código de Validação:
+                                </p>
+                                <p class="font-mono text-lg font-bold text-blue-600" id="codigo-validacao">
+                                    -
+                                </p>
+                                <p class="text-xs text-gray-500 mt-1">
+                                    Utilize este código para consultar o status da sua inscrição
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informações Importantes -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">
+                        Informações Importantes
+                    </h3>
+                    <div class="text-blue-700 text-sm space-y-2">
+                        <p>
+                            • Guarde este comprovante para consultas futuras sobre sua
+                            inscrição
+                        </p>
+                        <p>
+                            • O processo seletivo seguirá as etapas previstas no edital
+                            oficial
+                        </p>
+                        <p>• Acompanhe as comunicações através do seu email cadastrado</p>
+                        <p>
+                            • Em caso de dúvidas, entre em contato através dos canais oficiais
+                        </p>
+                        <p>
+                            • Este documento possui validade legal e comprova sua participação
+                            no programa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const telefoneInput = document.getElementById('telefone');
+
+            telefoneInput.addEventListener('input', function () {
+                let valor = telefoneInput.value.replace(/\D/g, ''); // Remove tudo que não for dígito
+
+                if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
+
+                let formatado = valor;
+
+                if (valor.length >= 2 && valor.length <= 6) {
+                    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+                } else if (valor.length > 6 && valor.length <= 10) {
+                    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
+                } else if (valor.length === 11) {
+                    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+                }
+
+                telefoneInput.value = formatado;
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nomeInput = document.getElementById('nome');
+            const emailInput = document.getElementById('email');
+            const telefoneInput = document.getElementById('telefone');
+            const continueButton = document.getElementById('btn-primary');
+            const verificationContainer = document.getElementById('verification-container');
+
+            function validarFormulario() {
+                const nomeValido = nomeInput.value.trim().length > 2;
+                const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+                const telefoneValido = telefoneInput.value.replace(/\D/g, '').length >= 10;
+
+                if (nomeValido && emailValido && telefoneValido) {
+                    continueButton.disabled = false;
+                    continueButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                } else {
+                    continueButton.disabled = true;
+                    continueButton.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+            }
+
+            nomeInput.addEventListener('input', validarFormulario);
+            emailInput.addEventListener('input', validarFormulario);
+            telefoneInput.addEventListener('input', validarFormulario);
+
+            continueButton.addEventListener('click', (e) => {
+                e.preventDefault(); // evita envio imediato do formulário
+
+                const verificationSteps = [
+                    {
+                        title: 'Verificação de Nome',
+                        loadingText: 'Verificando Nome...',
+                        successText: 'Nome verificado com sucesso',
+                        icon: 'fas fa-user'
+                    },
+                    {
+                        title: 'Verificação de E-mail',
+                        loadingText: 'Verificando E-mail...',
+                        successText: 'E-mail verificado com sucesso',
+                        icon: 'fas fa-envelope'
+                    },
+                    {
+                        title: 'Validação de Telefone',
+                        loadingText: 'Verificando Telefone...',
+                        successText: 'Telefone validado com sucesso',
+                        icon: 'fas fa-phone'
+                    },
+                    {
+                        title: 'Verificação de Elegibilidade',
+                        loadingText: 'Verificando participação...',
+                        successText: 'Verificado com sucesso',
+                        icon: 'fas fa-check-circle'
+                    }
+                ];
+
+                let currentStep = 0;
+                let currentCard = null;
+
+                function createVerificationCard(step) {
+                    const card = document.createElement('div');
+                    card.className = 'verification-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm opacity-0 transform translate-y-4';
+                    card.style.transition = 'all 0.5s ease-in-out';
+
+                    card.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <div class="verification-icon flex-shrink-0">
+                            <i class="${step.icon} text-blue-600 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900 mb-1">${step.title}</h4>
+                            <div class="verification-status">
+                                <div class="status-text flex items-center space-x-2">
+                                    <div class="loading-spinner w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                                    <span class="text-sm text-gray-600">${step.loadingText}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    return card;
+                }
+
+                function showNextStep() {
+                    if (currentStep < verificationSteps.length) {
+                        const step = verificationSteps[currentStep];
+                        if (currentCard) currentCard.remove();
+                        currentCard = createVerificationCard(step);
+                        verificationContainer.appendChild(currentCard);
+                        setTimeout(() => {
+                            currentCard.style.opacity = '1';
+                            currentCard.style.transform = 'translateY(0)';
+                        }, 100);
+                        setTimeout(() => {
+                            const statusText = currentCard.querySelector('.status-text');
+                            const spinner = currentCard.querySelector('.loading-spinner');
+                            const textSpan = currentCard.querySelector('.status-text span');
+                            const icon = currentCard.querySelector('.verification-icon i');
+
+                            spinner.remove();
+                            const checkIcon = document.createElement('i');
+                            checkIcon.className = 'fas fa-check-circle text-green-600';
+                            statusText.insertBefore(checkIcon, textSpan);
+                            textSpan.textContent = step.successText;
+                            textSpan.className = 'text-sm text-green-700 font-medium';
+                            icon.className = icon.className.replace('text-blue-600', 'text-green-600');
+
+                            currentStep++;
+                            setTimeout(showNextStep, 1000);
+                        }, 2500);
+                    } else {
+                        setTimeout(showFinalSection, 1000);
+                    }
+                }
+
+                function showFinalSection() {
+                    if (currentCard) currentCard.remove();
+
+                    const finalSection = document.createElement('div');
+                    finalSection.className = 'final-section bg-green-50 border border-green-200 p-6 rounded-lg shadow-sm opacity-0 transform translate-y-4';
+                    finalSection.style.transition = 'all 0.5s ease-in-out';
+
+                    finalSection.innerHTML = `
+                    <div class="text-center mb-4">
+                        <i class="fas fa-shield-alt text-green-600 text-3xl mb-2"></i>
+                        <h3 class="text-xl font-semibold text-green-800 mb-2">Autenticado com o Mais Agentes</h3>
+                        <p class="text-gray-800">Identidade verificada com sucesso</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-user-check text-blue-600 mr-2"></i>
+                                DADOS VERIFICADOS
+                            </h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    <strong>${nomeInput.value}</strong>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    ${emailInput.value}
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    ${telefoneInput.value}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                                LOCALIZAÇÃO
+                            </h4>
+                            <div class="text-sm text-gray-700 space-y-2">
+                                <p class="flex items-start">
+                                    <i class="fas fa-home text-green-600 mr-2 mt-1"></i>
+                                    <span><strong>Endereço:</strong><br>Rua Itapuã, Siqueira - Fortaleza/CE</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-school text-green-600 mr-2"></i>
+                                    <span><strong>2 unidades educacionais</strong> encontradas dentro de 3 km</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <button class="btn-success px-8 py-3 text-lg font-semibold">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Prosseguir para Documentação
+                        </button>
+                    </div>
+                `;
+
+                    verificationContainer.appendChild(finalSection);
+                    setTimeout(() => {
+                        finalSection.style.opacity = '1';
+                        finalSection.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+
+                showNextStep();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
